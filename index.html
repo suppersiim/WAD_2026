@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- This line makes the page scale correctly on phones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Uni Blog</title>
+  <link rel="stylesheet" href="style/index.css">
+</head>
+<body>
+
+  <!-- Top bar: navigation on the left, user avatar on the right -->
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="addPost.html">addPost</a>
+    </nav>
+    <h1>University Blog</h1>
+    <span class="avatar"></span>
+  </header>
+
+  <!-- Middle section: left column | posts | right column -->
+  <div class="layout">
+
+    <aside class="side"></aside>
+
+    <main>
+
+      <!-- Post 1: with photo -->
+      <article class="post">
+        <header>
+          <span class="avatar"></span>
+          <time datetime="2022-10-22">Oct 22, 2022</time>
+        </header>
+        <img src="https://picsum.photos/seed/tartu1/600/400" alt="Street in Tartu">
+        <p>On a vacation in Seattle! Hoping to see you guys soon</p>
+        <button class="like" type="button" aria-label="Like">👍</button>
+      </article>
+
+      <!-- Post 2: without photo -->
+      <article class="post">
+        <header>
+          <span class="avatar"></span>
+          <time datetime="2022-10-02">Oct 2, 2022</time>
+        </header>
+        <p>Anyone knows in which room the Web Application Development lab is today?</p>
+        <button class="like" type="button" aria-label="Like">👍</button>
+      </article>
+
+      <!-- Post 3: with photo -->
+      <article class="post">
+        <header>
+          <span class="avatar"></span>
+          <time datetime="2022-09-28">Sep 28, 2022</time>
+        </header>
+        <img src="https://picsum.photos/seed/tartu2/600/400" alt="Autumn walk">
+        <p>The Anne channel was really nice today, cold water is refreshing</p>
+        <button class="like" type="button" aria-label="Like">👍</button>
+      </article>
+
+      <!-- Post 4: without photo -->
+      <article class="post">
+        <header>
+          <span class="avatar"></span>
+          <time datetime="2022-09-15">Sep 15, 2022</time>
+        </header>
+        <p>There is a really sweet discount in the school cafeteria today, in case you didn't notice</p>
+        <button class="like" type="button" aria-label="Like">👍</button>
+      </article>
+
+      <!-- Post 5: with photo -->
+      <article class="post">
+        <header>
+          <span class="avatar"></span>
+          <time datetime="2022-09-03">Sep 3, 2022</time>
+        </header>
+        <img src="https://picsum.photos/seed/tartu3/600/400" alt="University building">
+        <p>Does anyone know where this picture is taken on the Toome hill?</p>
+        <button class="like" type="button" aria-label="Like">👍</button>
+      </article>
+
+    </main>
+
+    <aside class="side"></aside>
+
+  </div>
+
+  <footer>
+    <p>Thanks for visiting our blog!</p>
+  </footer>
+
+</body>
+</html>
