@@ -35,23 +35,39 @@ body > header:hover {
   background: #a9c7ea;
 }
 
+/* Links sit in a row with space for the divider */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
 /* DESCENDANT SELECTOR: every link inside nav */
 nav a {
+  position: relative;
   color: #222;
   text-decoration: none;
   font-size: 20px;
-  padding: 0 14px;
+  padding: 6px 14px;
+  border-radius: 6px;          /* soft pill shape on hover */
+  transition: background 0.2s, color 0.2s;
 }
 
-/* ADJACENT SIBLING SELECTOR: a link that comes right after another link
-   gets the "|" divider line from the wireframe */
-nav a + a {
-  border-left: 2px solid #222;
+/* ADJACENT SIBLING SELECTOR: a link right after another link
+   gets the "|" divider, drawn outside the link's background */
+nav a + a::before {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: 25%;
+  height: 50%;
+  width: 2px;
+  background: #222;
 }
 
 nav a:hover {
+  background: rgba(255, 255, 255, 0.6);   /* required: background changes on hover */
   color: #0b5ed7;
-  text-decoration: underline;
 }
 
 /* ---------- Middle section (flexbox row) ---------- */
@@ -183,5 +199,70 @@ footer p {
 
   body {
     padding: 8px;
+  }
+}
+/* ---------- Form pages (addPost / login) ---------- */
+.form-page {
+  flex: 1;
+  display: flex;               /* FLEXBOX: centre the form card */
+  flex-direction: row;         /* override main's column direction */
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 40px;
+}
+
+.card {
+  background: #d5dbe3;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.row {
+  display: flex;               /* label left, field right */
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.row label {
+  width: 80px;
+  text-align: right;
+}
+
+.row textarea {
+  flex: 1;
+  min-height: 90px;
+}
+
+/* GENERAL SIBLING SELECTOR: the button that comes after the rows */
+.row ~ .btn {
+  align-self: center;
+  background: #1f4e8c;
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.row ~ .btn:hover {
+  background: #163a69;
+}
+
+/* Phone: stack label above field */
+@media (max-width: 700px) {
+  .row {
+    flex-direction: column;
+  }
+  .row label {
+    width: auto;
+    text-align: left;
+  }
+  .row textarea {
+    width: 100%;
   }
 }
