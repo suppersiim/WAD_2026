@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>PostIt - Login</title>
+        <link rel="stylesheet" href="style/login.css">
+    </head>
+    <body>
+
+        <!-- Keep the nav bar same as in index.html -->
+        <header>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="addPost.html">addPost</a>
+            </nav>
+            <a href="login.html" class="avatar" aria-label="Login"></a>
+        </header>
+
+        <div class="layout">
+
+            <aside class="side"></aside>
+
+                <main>
+                    <article class="login-card">
+                    <h1>Welcome to PostIt</h1>
+                    <a href="#" class="link">Create an account</a>
+                    <p>or</p>
+                    <p>Please log in</p>
+
+                    <!-- Both fields are "required", so the browser blocks submit if either is empty.
+                        A valid submit redirects to index.html. -->
+                    <form class="login-form" action="index.html" method="get">
+                        <label for="email" class="visually-hidden">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Email" required>
+
+                        <label for="password" class="visually-hidden">Password</label>
+                        <input type="password" id="password" name="password" placeholder="Password" required>
+
+                        <button type="submit">Log in</button>
+                    </form>
+
+                    <a href="#" class="link">Forget password</a>
+                    </article>
+                </main>
+
+            <aside class="side"></aside>
+
+        </div>
+
+        <footer>
+            <p>Thanks for visiting our site!</p>
+        </footer>
+
+    </body>
+</html>
