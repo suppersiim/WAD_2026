@@ -1,108 +1,7 @@
-/* ---------- Basics ---------- */
-* {
-  box-sizing: border-box;   /* padding is included in an element's width */
-}
-
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Arial, sans-serif;
-  background: #eef1f5;
-  color: #222;
-
-  /* FLEXBOX: stack header, layout and footer vertically */
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 12px;
-}
-
-/* ---------- Top bar ---------- */
-/* CHILD SELECTOR: only the header that is directly inside body
-   (so it does not affect the header inside each post) */
+/* ---------- Add-post header: navigation left, avatar right ---------- */
 body > header {
   display: flex;
-  justify-content: space-between;   /* nav left, avatar right */
-  align-items: center;
-  background: #d5dbe3;
-  padding: 10px 20px;
-  border-radius: 8px;
-  transition: background 0.3s;
-}
-
-/* PSEUDO-CLASS: the whole bar changes colour when hovered */
-body > header:hover {
-  background: #a9c7ea;
-}
-
-/* Links sit in a row with space for the divider */
-nav {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-/* DESCENDANT SELECTOR: every link inside nav */
-nav a {
-  position: relative;
-  color: #222;
-  text-decoration: none;
-  font-size: 20px;
-  padding: 6px 14px;
-  border-radius: 6px;          /* soft pill shape on hover */
-  transition: background 0.2s, color 0.2s;
-}
-
-/* ADJACENT SIBLING SELECTOR: a link right after another link
-   gets the "|" divider, drawn outside the link's background */
-nav a + a::before {
-  content: "";
-  position: absolute;
-  left: -9px;
-  top: 25%;
-  height: 50%;
-  width: 2px;
-  background: #222;
-}
-
-nav a:hover {
-  background: rgba(255, 255, 255, 0.6);   /* required: background changes on hover */
-  color: #0b5ed7;
-}
-
-/* ---------- Avatar (a grey circle with a person drawn using pseudo-elements) ---------- */
-.avatar {
-  position: relative;
-  display: block;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #aab3bf;
-  overflow: hidden;     /* cuts off the "shoulders" at the circle's edge */
-}
-
-/* PSEUDO-ELEMENT: the head */
-.avatar::before {
-  content: "";
-  position: absolute;
-  top: 18%;
-  left: 32%;
-  width: 36%;
-  height: 36%;
-  background: #fff;
-  border-radius: 50%;
-}
-
-/* PSEUDO-ELEMENT: the shoulders */
-.avatar::after {
-  content: "";
-  position: absolute;
-  top: 62%;
-  left: 15%;
-  width: 70%;
-  height: 70%;
-  background: #fff;
-  border-radius: 50%;
+  justify-content: space-between;
 }
 
 /* ---------- Add post form ---------- */
@@ -158,9 +57,6 @@ nav a:hover {
 
 /* Phone: stack label above field */
 @media (max-width: 700px) {
-  body {
-    padding: 8px;
-  }
   .row {
     flex-direction: column;
   }
